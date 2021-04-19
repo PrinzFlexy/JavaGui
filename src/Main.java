@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.io.Console;
 
 public class Main extends Frame
 {
