@@ -1,12 +1,18 @@
+package Gui;
+
 import java.awt.*;
 import java.awt.event.*;
 
 public class Main extends Frame
 {
-    public static void main (String args[])
+public static void main (String args[])
     {
         new Main();
     }
+ Button btn1 = new Button("1");
+    Button btn2 = new Button("2");
+    Button btn3 = new Button("3");
+    Button btn4 = new Button("4");
 
     public Main()
     {
@@ -14,14 +20,22 @@ public class Main extends Frame
         setSize(300,200);
         addWindowListener(new WindowListener());
         //addKeyListener(new KeyListener());
-        setLayout(new BorderLayout());
+        setLayout(new GridLayout());
         setBackground(Color.yellow);
 
-        add(new Label("Mitte", Label.CENTER), BorderLayout.CENTER);
-        add(new Label("West", Label.CENTER), BorderLayout.WEST);
-        add(new Label("Ost", Label.CENTER), BorderLayout.EAST);
-        add(new Label("Nord", Label.CENTER), BorderLayout.NORTH);
-        add(new Label("Süd", Label.CENTER), BorderLayout.SOUTH);
+        btn1.setForeground(Color.RED);
+        btn1.setBackground(Color.WHITE);
+        btn1.addActionListener(new MyActionListener());
+        add("WEST",btn1);
+        btn2.setForeground(Color.RED);
+        btn2.setBackground(Color.WHITE);
+        btn2.addActionListener(new MyActionListener());
+        add("CENTER",btn2);
+        btn3.setForeground(Color.RED);
+        btn3.setBackground(Color.WHITE);
+        btn3.addActionListener(new MyActionListener());
+        add("SOUTH",btn3);
+        pack(); 
 
         setVisible(true);
     }
@@ -29,14 +43,11 @@ public class Main extends Frame
     /*static class KeyListener extends KeyAdapter  {
         @Override
         public void keyTyped(KeyEvent e) {
-
         }
-
         @Override
         public void keyPressed(KeyEvent e) {
             SystemColor.getColor(keyTyped("e"));
         }
-
         @Override
         public void keyReleased(KeyEvent e) {
         }
@@ -49,4 +60,12 @@ public class Main extends Frame
             System.exit(0);
         }
     }
-}
+    class MyActionListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e) {
+            btn1.setBackground(Color.GREEN);
+            btn2.setBackground(Color.GREEN);
+            btn3.setBackground(Color.GREEN);
+            System.out.println("Schaltfläche wurde gedrückt");
+        }
+}}
