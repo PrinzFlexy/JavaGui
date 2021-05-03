@@ -1,5 +1,3 @@
-package Gui;
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -9,7 +7,7 @@ public static void main (String args[])
     {
         new Main();
     }
- Button btn1 = new Button("1");
+    Button btn1 = new Button("1");
     Button btn2 = new Button("2");
     Button btn3 = new Button("3");
     Button btn4 = new Button("4");
@@ -19,7 +17,7 @@ public static void main (String args[])
         setTitle("Fenster");
         setSize(300,200);
         addWindowListener(new WindowListener());
-        //addKeyListener(new KeyListener());
+
         setLayout(new GridLayout());
         setBackground(Color.yellow);
 
@@ -39,19 +37,6 @@ public static void main (String args[])
 
         setVisible(true);
     }
-
-    /*static class KeyListener extends KeyAdapter  {
-        @Override
-        public void keyTyped(KeyEvent e) {
-        }
-        @Override
-        public void keyPressed(KeyEvent e) {
-            SystemColor.getColor(keyTyped("e"));
-        }
-        @Override
-        public void keyReleased(KeyEvent e) {
-        }
-    };*/
 
     static class WindowListener extends WindowAdapter {
         public void windowClosing(WindowEvent e)
