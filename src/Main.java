@@ -56,12 +56,10 @@ public class Main extends Frame {
             System.exit(0);
         }
     }
-/*     class MyActionListener implements ActionListener {
+    class MyActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            btn1.setBackground(Color.GREEN);
-            btn2.setBackground(Color.GREEN);
-            btn3.setBackground(Color.GREEN);
+            btn1.setLabel((lbl3), );
             System.out.println("Schaltfläche wurde gedrückt");
         }
-    } */
+    }
 }
