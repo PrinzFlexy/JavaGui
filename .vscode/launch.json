@@ -6,16 +6,23 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch Current File",
+            "name": "Launch mainClass",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "mainClass",
+            "projectName": "JavaGui_a5d4f2d0"
         },
         {
             "type": "java",
-            "name": "Launch Main",
+            "name": "Launch mainClass",
             "request": "launch",
-            "mainClass": "Main",
-            "projectName": "JavaGui_a5d4f2d0"
+            "mainClass": "mainClass",
+            "projectName": "JavaGui"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
         }
     ]
 }
