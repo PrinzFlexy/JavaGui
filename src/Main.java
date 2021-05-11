@@ -28,6 +28,7 @@ public class Main extends Frame {
         this.setResizable(false);
         this.setLocation(350,200);
         this.addWindowListener(new WindowListener());
+        this.btn1.addActionListener(new MyActionListener());
         this.setBackground(Color.WHITE);
 
 
@@ -58,7 +59,7 @@ public class Main extends Frame {
     }
     class MyActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            btn1.setLabel((lbl3), );
+            //btn1.setLabel((lbl3), "HI");
             System.out.println("Schaltfläche wurde gedrückt");
         }
     }
