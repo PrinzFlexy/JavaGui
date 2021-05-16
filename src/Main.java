@@ -1,3 +1,6 @@
+//JavaGui mit Java.awt für den Software Unterricht
+
+
 import java.awt.*;
 import java.awt.event.*;
 
