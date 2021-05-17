@@ -1,22 +1,24 @@
 import java.awt.*;
 
-public class Main extends Frame {
-    public static void main (String args[]) {
-            new Main();
-    }
+public class MeinFenster extends Frame {
 
-    public Button btn1;
-    public Label lbl1;
-    private Panel pnl1, pnl2, pnl3;
-    private TextField feld1, feld2;
-    private Label lbl2, lbl3;
 
-   public Main() {
+     public MeinWindowListener mwl = new MeinWindowListener();
+     public MeinActionListener mal = new MeinActionListener(this);
+         
+     public Button btn1;
+     public Label lbl3;
+     private Panel pnl1, pnl2, pnl3;
+     public TextField feld1, feld2;
+     private Label lbl1, lbl2;
+     double verbrauch = 0;
+
+     public MeinFenster() {
         this.feld1 = new TextField();
         this.feld2 = new TextField();
         this.lbl1 = new Label("Liter:");
         this.lbl2 = new Label("gefahrene Kilometer:");
-        this.lbl3 = new Label("Der PKW verbraucht x Liter auf 100 km!");
+        this.lbl3 = new Label("Der PKW verbraucht " +verbrauch+ " Liter auf 100 km!");
         this.btn1 = new Button("Berechne Verbrauch");
         this.btn1.setPreferredSize(new Dimension(50,35));
         this.pnl1 = new Panel();
@@ -27,9 +29,10 @@ public class Main extends Frame {
         this.setSize(400,150);
         this.setResizable(false);
         this.setLocation(350,200);
-        this.addWindowListener(new WindowListener());
-        this.btn1.addActionListener(new MyActionListener());
+        this.addWindowListener(mwl);
+        btn1.addActionListener(mal);
         this.setBackground(Color.WHITE);
+        this.setAlwaysOnTop(true);
 
         this.pnl1.setLayout(new GridLayout(2,2));
         this.add("North",pnl1);
@@ -47,5 +50,9 @@ public class Main extends Frame {
         this.pnl3.add((btn1), BorderLayout.SOUTH);
 
         this.setVisible(true);
+    }
+    
+    public static void main (String args[]) {
+          MeinFenster f = new MeinFenster();
     }
 }
